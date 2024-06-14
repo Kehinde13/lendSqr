@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/Group (1).svg";
 import signInImg from '../assets/SignIn.svg'
 import '../Styles/LoginPage.css'
@@ -21,7 +22,7 @@ const LoginPage = () => {
 
             <a href="">FORGOT PASSWORD?</a>
 
-            <button>LOG IN</button>
+            <Link to='dashboard' className="btn">LOG IN</Link>
         </form>
       </div>
       </div>

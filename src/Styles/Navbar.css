@@ -1,0 +1,111 @@
+.Navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+}
+
+.Navbar img {
+  width: 30%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.Navbar form {
+  display: none;
+}
+
+.Navbar div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.Navbar div .doc {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.Navbar div img {
+  width: 20px;
+}
+
+.Navbar div .user {
+  display: none;
+}
+
+@media screen and (min-width: 850px) {
+  .Navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 15px;
+  }
+  .Navbar img {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .Navbar form {
+    display: block;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .Navbar form input {
+    padding: 10px 50px 10px 50px;
+    border-radius: 10px 0 0 10px;
+    border-color: whitesmoke;
+  }
+  .Navbar form button {
+    border-radius: 0px 10px 10px 0px;
+    padding: 10px 20px;
+    background-color: #39cdcc;
+    border: none;
+    margin-top: -3px;
+  }
+  .Navbar div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+  }
+  .Navbar div .doc {
+    margin-right: 50px;
+  }
+  .Navbar div .burger {
+    display: none;
+  }
+  .Navbar div .alert {
+    width: 20px;
+  }
+  .Navbar div .user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .Navbar div img {
+    width: 40px;
+  }
+  .Navbar div .dropdown {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+/*# sourceMappingURL=Navbar.css.map */

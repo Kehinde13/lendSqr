@@ -12,6 +12,7 @@
 
 .loginPage .main h1, .loginPage .main p {
   text-align: center;
+  color: #213f7d;
 }
 
 .loginPage .main form {
@@ -38,12 +39,13 @@
   color: #39cdcc;
 }
 
-.loginPage .main form button {
+.loginPage .main form .btn {
   padding: 10px;
   border-radius: 10px;
   background-color: #39cdcc;
   border: none;
   color: white;
+  text-align: center;
 }
 
 @media screen and (min-width: 850px) {
@@ -69,7 +71,6 @@
   }
   .loginPage .main h1, .loginPage .main p {
     text-align: left;
-    color: #213f7d;
   }
   .loginPage .main form {
     display: -webkit-box;
@@ -93,13 +94,13 @@
     font-size: small;
     color: #39cdcc;
   }
-  .loginPage .main form button {
+  .loginPage .main form .btn {
     padding: 12px;
     border-radius: 10px;
     background-color: #39cdcc;
     border: none;
     color: white;
-    width: 75%;
+    width: 70%;
   }
 }
 /*# sourceMappingURL=LoginPage.css.map */

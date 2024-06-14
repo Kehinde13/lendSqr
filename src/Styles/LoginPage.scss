@@ -12,6 +12,7 @@
 
         h1, p {
             text-align: center;
+            color: $primaryColor;
         }
 
         form {
@@ -32,12 +33,13 @@
                 color: $neonColor;
             }
 
-            button {
+            .btn {
                 padding: 10px;
                 border-radius: 10px;
                 background-color: $neonColor;
                 border: none;
                 color: white;
+                text-align: center;
             }
         }
     }
@@ -62,7 +64,6 @@
     
             h1, p {
                 text-align: left;
-                color: $primaryColor;
             }
     
             form {
@@ -74,7 +75,7 @@
                 input {
                     padding: 12px;
                     border-radius: 10px;
-                    border: 1px solid #545F7D;
+                    border: 1px solid $grayColor;
                     width: 70%;
                 }
     
@@ -84,13 +85,13 @@
                     color: $neonColor;
                 }
     
-                button {
+                .btn {
                     padding: 12px;
                     border-radius: 10px;
                     background-color: $neonColor;
                     border: none;
                     color: white;
-                    width: 75%;
+                    width: 70%;
                 }
             }
         }
