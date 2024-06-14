@@ -1,0 +1,105 @@
+.loginPage {
+  padding: 20px;
+}
+
+.loginPage .main {
+  margin-top: 20px;
+}
+
+.loginPage .main img {
+  width: 100%;
+}
+
+.loginPage .main h1, .loginPage .main p {
+  text-align: center;
+}
+
+.loginPage .main form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.loginPage .main form input {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #545F7D;
+}
+
+.loginPage .main form a {
+  text-decoration: none;
+  font-size: small;
+  color: #39cdcc;
+}
+
+.loginPage .main form button {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #39cdcc;
+  border: none;
+  color: white;
+}
+
+@media screen and (min-width: 850px) {
+  .loginPage {
+    padding: 50px;
+  }
+  .loginPage .main {
+    margin-top: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .loginPage .main img {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .loginPage .main div {
+    width: 40%;
+  }
+  .loginPage .main h1, .loginPage .main p {
+    text-align: left;
+    color: #213f7d;
+  }
+  .loginPage .main form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .loginPage .main form input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #545F7D;
+    width: 70%;
+  }
+  .loginPage .main form a {
+    text-decoration: none;
+    font-size: small;
+    color: #39cdcc;
+  }
+  .loginPage .main form button {
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #39cdcc;
+    border: none;
+    color: white;
+    width: 75%;
+  }
+}
+/*# sourceMappingURL=LoginPage.css.map */
