@@ -1,0 +1,7 @@
+.main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+}
+/*# sourceMappingURL=Dashboard.css.map */
