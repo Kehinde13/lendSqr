@@ -1,0 +1,112 @@
+@import '../Variables/Variables.scss';
+
+
+.mobileMenu {
+    position: absolute;
+    min-height: max-content;
+    background-color: $lightNeonColor;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: top 1s;
+
+    .close{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .menu {
+        margin-top: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+        .user{
+            display: flex;
+            
+            img {
+                width: 30px;
+            }
+
+            .dropdown {
+                width: fit-content;
+            }
+        }
+
+        form {
+            display: flex;
+            width: 100%;
+            input {
+                padding: 10px 30px 10px 30px;
+                border-radius: 10px 0 0 10px;
+                border: 2px solid whitesmoke;
+                width: 150px;    
+            }
+
+            button {
+                border-radius: 0px 10px 10px 0px;
+                padding: 8px 20px;
+                background-color: $neonColor;
+                border: none;
+            }
+        }
+
+        .actions {
+            display: block;
+            padding: 10px 0;
+        
+            .dash {
+                margin-bottom: 30px;
+                display: flex;
+                gap: 10px;
+            }
+
+            ul {
+                padding: 0;
+                list-style-type: none;
+                width: 100%;
+                margin-bottom: 20px;
+        
+                h4 {
+                    font-size: small;
+                }
+        
+                li {
+                    padding: 10px 0px;
+                    cursor: pointer;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                }
+        
+                li:hover {
+                    border-right: 4px solid $neonColor;
+                    color: $deepGrayColor;
+                }
+            }
+        }
+    }
+}
+
+.hideMenu {
+    position: absolute;
+    top: -800px;
+    display: none;
+
+    .close {
+        display: none;
+    }
+}
+
+
+
+@media screen and (min-width: 850px) {
+    .mobileMenu{
+        top: -8000px;
+    }
+}
+
+

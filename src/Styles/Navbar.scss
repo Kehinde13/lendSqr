@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    position: relative;
 
     img {
         width: 30%;
@@ -53,8 +54,7 @@
                 padding: 15px 50px 15px 50px;
                 border-radius: 10px 0 0 10px;
                 border: 2px solid whitesmoke;
-                width: 250px;
-                
+                width: 250px;    
             }
 
             button {

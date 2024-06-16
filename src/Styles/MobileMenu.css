@@ -1,0 +1,127 @@
+.mobileMenu {
+  position: absolute;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  background-color: #dcf3f3;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: top 1s;
+  transition: top 1s;
+}
+
+.mobileMenu .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.mobileMenu .menu {
+  margin-top: 20px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+}
+
+.mobileMenu .menu .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mobileMenu .menu .user img {
+  width: 30px;
+}
+
+.mobileMenu .menu .user .dropdown {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.mobileMenu .menu form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.mobileMenu .menu form input {
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px 0 0 10px;
+  border: 2px solid whitesmoke;
+  width: 150px;
+}
+
+.mobileMenu .menu form button {
+  border-radius: 0px 10px 10px 0px;
+  padding: 8px 20px;
+  background-color: #39cdcc;
+  border: none;
+}
+
+.mobileMenu .menu .actions {
+  display: block;
+  padding: 10px 0;
+}
+
+.mobileMenu .menu .actions .dash {
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.mobileMenu .menu .actions ul {
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mobileMenu .menu .actions ul h4 {
+  font-size: small;
+}
+
+.mobileMenu .menu .actions ul li {
+  padding: 10px 0px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobileMenu .menu .actions ul li:hover {
+  border-right: 4px solid #39cdcc;
+  color: #213F7D;
+}
+
+.hideMenu {
+  position: absolute;
+  top: -800px;
+  display: none;
+}
+
+.hideMenu .close {
+  display: none;
+}
+
+@media screen and (min-width: 850px) {
+  .mobileMenu {
+    top: -8000px;
+  }
+}
+/*# sourceMappingURL=MobileMenu.css.map */

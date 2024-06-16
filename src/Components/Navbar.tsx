@@ -6,8 +6,15 @@ import user from '../assets/avatar.png'
 import dropdown from '../assets/Vector (2).png'
 import burger from '../assets/Menu.png'
 import '../Styles/Navbar.css'
+import MobileMenu from "./MobileMenu";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [menu, setMenu] = useState(false)
+
+ const toggleMenu = () => {
+    setMenu(!menu)
+ }
   return (
     <div className="Navbar">
       <img src={logo} alt="logo" />
@@ -24,7 +31,7 @@ const Navbar = () => {
 
         <img src={alert} alt="alert" className="alert"/>
 
-        <img src={burger} alt="" className="burger"/>
+        <img src={burger} alt="" className="burger" onClick={toggleMenu}/>
 
         <div className="user">
             <img src={user} alt="user image" />
@@ -32,6 +39,8 @@ const Navbar = () => {
             <img src={dropdown} alt="dropdown" className="dropdown"/>
         </div>
       </div>
+
+      <MobileMenu menu={menu} toggleMenu={toggleMenu}/>
     </div>
   );
 };
