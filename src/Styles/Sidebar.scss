@@ -10,6 +10,7 @@
         grid-column: 1 / 2;
         padding: 30px 0;
         display: block;
+        box-shadow: rgba(170, 167, 167, 0.35) 1px 12px 12px;
     
         div,
         .dash {
@@ -17,6 +18,7 @@
             display: flex;
             gap: 8px;
             align-items: center;
+            font-size: small;
         }
     
         .dash {

@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import LoginPage from "./Pages/LoginPage"
 import Dashboard from "./Pages/Dashboard"
+import Users from "./Pages/Users"
 
 
 function App() {
@@ -14,7 +15,10 @@ function App() {
       path: 'dashboard',
       element: <Dashboard />,
       children: [
-
+        {
+          element: <Users />,
+          index: true
+        }
       ]
     }
   ])

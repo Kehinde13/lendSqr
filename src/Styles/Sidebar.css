@@ -9,6 +9,8 @@
     grid-column: 1 / 2;
     padding: 30px 0;
     display: block;
+    -webkit-box-shadow: rgba(170, 167, 167, 0.35) 1px 12px 12px;
+            box-shadow: rgba(170, 167, 167, 0.35) 1px 12px 12px;
   }
   .sidebar div,
   .sidebar .dash {
@@ -20,6 +22,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    font-size: small;
   }
   .sidebar .dash {
     margin-bottom: 30px;
