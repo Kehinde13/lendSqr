@@ -40,7 +40,10 @@
         justify-content: space-between;
         padding: 15px;
         box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
-        z-index: 50;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background-color: white;
     
         img {
             width: fit-content;

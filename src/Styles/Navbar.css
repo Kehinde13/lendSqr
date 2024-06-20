@@ -52,7 +52,10 @@
     padding: 15px;
     -webkit-box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
             box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
-    z-index: 50;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white;
   }
   .Navbar img {
     width: -webkit-fit-content;

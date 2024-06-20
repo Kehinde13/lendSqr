@@ -1,6 +1,11 @@
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { userDataType } from "../Pages/Dashboard";
+import options from "../assets/ic-more-vert-18px.png";
+import next from "../assets/Vector (6).png";
+import previous from "../assets/Vector (5).png";
+import filter from "../assets/filter-results-button (1).png";
+import "../Styles/Table.css";
 
 const Table = () => {
   const [userData]: [userDataType[]] = useOutletContext();
@@ -26,9 +31,7 @@ const Table = () => {
     if (currentPageNumber === userData.length / TOTAL_VALUES_PER_PAGE) return;
     setCurrentPageNumber((prev) => prev + 1);
   };
-  const handleSelectChange = (e: {
-    target: { value: SetStateAction<number> };
-  }) => {
+  const handleSelectChange = (e) => {
     setCurrentPageNumber(e.target.value);
   };
 
@@ -39,26 +42,46 @@ const Table = () => {
   }, [currentPageNumber, userData]);
 
   return (
-    <div>
+    <div className="table">
       {dataToDisplay ? (
         <table>
           <thead>
             <tr>
               {tableHeaders.map((header) => {
-                return <th key={header}>{header}</th>;
+                return (
+                  <th key={header} className="headers">
+                    {header}
+                    <img src={filter} alt="" />
+                  </th>
+                );
               })}
             </tr>
           </thead>
           <tbody>
-            {dataToDisplay.map((obj) => {
+            {dataToDisplay.map((user) => {
               return (
-                <tr key={obj.id}>
-                  <td>{obj.organization}</td>
-                  <td>{obj.username}</td>
-                  <td>{obj.email}</td>
-                  <td>{obj.phone}</td>
-                  <td>{obj.joined}</td>
-                  <td>{obj.status}</td>
+                <tr key={user.id} className="tableContents">
+                  <td>{user.organization}</td>
+                  <td>{user.username}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phone}</td>
+                  <td>{user.joined}</td>
+                  <td
+                    className={`${
+                      user.status === "Inactive"
+                        ? "inactive"
+                        : user.status === "Active"
+                        ? "active"
+                        : user.status === "Blacklisted"
+                        ? "blacklisted"
+                        : "pending"
+                    }`}
+                  >
+                    {user.status}
+                  </td>
+                  <td>
+                    <img src={options} alt="options" />
+                  </td>
                 </tr>
               );
             })}
@@ -66,6 +89,39 @@ const Table = () => {
         </table>
       ) : (
         <div>Loading...</div>
+      )}
+      {userData && (
+        <div className="pagination">
+          <div className="dropdown">
+            Showing
+            <select
+              name="page-number"
+              onChange={handleSelectChange}
+              value={currentPageNumber}
+            >
+              {Array.from(Array(userData.length / TOTAL_VALUES_PER_PAGE))
+                .map((_e, i) => i + 1)
+                .map((val) => {
+                  return <option key={val}>{val}</option>;
+                })}
+            </select>
+            out of {userData.length / TOTAL_VALUES_PER_PAGE}
+          </div>
+          <div id="btn-container">
+            <button onClick={goOnPrevPage}>
+              <img src={next} alt="" />
+            </button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            ......
+            <button>15</button>
+            <button>16</button>
+            <button onClick={goOnNextPage}>
+              <img src={previous} alt="" />
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

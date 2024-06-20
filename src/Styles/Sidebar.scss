@@ -11,8 +11,7 @@
         padding: 30px 0;
         display: block;
         box-shadow: rgba(170, 167, 167, 0.35) 1px 12px 12px;
-        height: 100vh;
-          
+        height: 100%;
           
     
         div,
@@ -21,7 +20,7 @@
             display: flex;
             gap: 8px;
             align-items: center;
-            font-size: small;
+            font-size: 12px;
         }
     
         .dash {
@@ -56,9 +55,5 @@
         }
     }
 
-    .sidebar:hover {
-        overflow-y: scroll;
-        scrollbar-width: thin;
-    }
 }
 
