@@ -25,7 +25,7 @@
   width: 70%;
   padding: 20px;
   border-radius: 10px;
-  height: 150px;
+  height: 120px;
 }
 
 .users .users-bar div h4 {
@@ -58,9 +58,9 @@
     -webkit-box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
             box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
     width: 25%;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    height: 150px;
+    height: 120px;
   }
   .users .users-bar div h4 {
     font-size: small;

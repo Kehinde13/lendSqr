@@ -49,7 +49,7 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 30px;
+    padding: 15px;
     -webkit-box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
             box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
     z-index: 50;

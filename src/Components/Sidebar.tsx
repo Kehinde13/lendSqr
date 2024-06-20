@@ -1,6 +1,5 @@
 import "../Styles/Sidebar.css";
 import briefcase from "../assets/briefcase 1.png";
-import down from "../assets/Vector (3).png";
 import home from "../assets/home 1.png";
 import user from "../assets/user-friends 1.png";
 import users from '../assets/users 1.png'
@@ -27,7 +26,6 @@ const Sidebar = () => {
       <div>
         <img src={briefcase} alt="" />
         <h3>Switch Organization</h3>
-        <img src={down} alt="" />
       </div>
 
       <h3 className="dash">

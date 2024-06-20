@@ -11,6 +11,7 @@
     display: block;
     -webkit-box-shadow: rgba(170, 167, 167, 0.35) 1px 12px 12px;
             box-shadow: rgba(170, 167, 167, 0.35) 1px 12px 12px;
+    height: 100vh;
   }
   .sidebar div,
   .sidebar .dash {
@@ -52,6 +53,10 @@
     background-color: #dcf3f3;
     border-left: 4px solid #39cdcc;
     color: #213F7D;
+  }
+  .sidebar:hover {
+    overflow-y: scroll;
+    scrollbar-width: thin;
   }
 }
 /*# sourceMappingURL=Sidebar.css.map */
