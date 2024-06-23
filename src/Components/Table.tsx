@@ -6,6 +6,7 @@ import next from "../assets/Vector (6).png";
 import previous from "../assets/Vector (5).png";
 import filter from "../assets/filter-results-button (1).png";
 import "../Styles/Table.css";
+import Options from "./Options";
 
 const Table = () => {
   const [userData]: [userDataType[]] = useOutletContext();
@@ -21,6 +22,11 @@ const Table = () => {
     "DATE JOINED",
     "STATUS",
   ];
+
+  const toggleDropdown = (e) => {
+    console.log(e.target.key);
+   
+  }
 
   const goOnPrevPage = () => {
     if (currentPageNumber === 1) return;
@@ -61,7 +67,7 @@ const Table = () => {
           <tbody>
             {dataToDisplay.map((user) => {
               return (
-                <tr key={user.id} className="tableContents">
+                <tr key={user.id} className="tableContents" onClick={toggleDropdown}>
                   <td>{user.organization}</td>
                   <td>{user.username}</td>
                   <td>{user.email}</td>
@@ -83,6 +89,7 @@ const Table = () => {
                   <td>
                     <img src={options} alt="options" />
                   </td>
+                 {/*  {  <Options />} */}
                 </tr>
               );
             })}
