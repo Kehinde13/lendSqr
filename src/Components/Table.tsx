@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { userDataType } from "../Pages/Dashboard";
 import options from "../assets/ic-more-vert-18px.png";
@@ -31,8 +31,9 @@ const Table = () => {
     if (currentPageNumber === userData.length / TOTAL_VALUES_PER_PAGE) return;
     setCurrentPageNumber((prev) => prev + 1);
   };
-  const handleSelectChange = (e) => {
-    setCurrentPageNumber(e.target.value);
+  const handleSelectChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    const newPage = Number(e.target.value);
+    setCurrentPageNumber(newPage)
   };
 
   useEffect(() => {
