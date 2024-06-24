@@ -7,11 +7,14 @@ import previous from "../assets/Vector (5).png";
 import filter from "../assets/filter-results-button (1).png";
 import "../Styles/Table.css";
 import Options from "./Options";
+import Filter from "./Filter";
 
 const Table = () => {
   const [userData]: [userDataType[]] = useOutletContext();
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [dataToDisplay, setDataToDisplay] = useState<userDataType[]>();
+  const [dropdownVisible, setDropdownVisible] = useState<number | null>(null);
+  const [showFilter, setShowFilter] = useState<boolean>(false);
   const TOTAL_VALUES_PER_PAGE = 10;
 
   const tableHeaders = [
@@ -23,9 +26,16 @@ const Table = () => {
     "STATUS",
   ];
 
-  const toggleDropdown = (e) => {
-    console.log(e.target.key);
-   
+  const toggleDropdown = (index: number) => {
+    if (dropdownVisible === index) {
+      setDropdownVisible(null);
+    } else {
+      setDropdownVisible(index);
+    }
+  };
+
+  const toggleFilter = () => {
+    setShowFilter(!showFilter)
   }
 
   const goOnPrevPage = () => {
@@ -37,9 +47,12 @@ const Table = () => {
     if (currentPageNumber === userData.length / TOTAL_VALUES_PER_PAGE) return;
     setCurrentPageNumber((prev) => prev + 1);
   };
-  const handleSelectChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+
+  const handleSelectChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
     const newPage = Number(e.target.value);
-    setCurrentPageNumber(newPage)
+    setCurrentPageNumber(newPage);
   };
 
   useEffect(() => {
@@ -58,16 +71,17 @@ const Table = () => {
                 return (
                   <th key={header} className="headers">
                     {header}
-                    <img src={filter} alt="" />
+                    <img src={filter} alt="" onClick={toggleFilter}/>
                   </th>
                 );
               })}
+              { showFilter && (<Filter />)}
             </tr>
           </thead>
           <tbody>
-            {dataToDisplay.map((user) => {
+            {dataToDisplay.map((user, index) => {
               return (
-                <tr key={user.id} className="tableContents" onClick={toggleDropdown}>
+                <tr key={user.id} className="tableContents">
                   <td>{user.organization}</td>
                   <td>{user.username}</td>
                   <td>{user.email}</td>
@@ -86,10 +100,15 @@ const Table = () => {
                   >
                     {user.status}
                   </td>
-                  <td>
+                  <td onClick={() => toggleDropdown(index)}>
                     <img src={options} alt="options" />
                   </td>
-                 {/*  {  <Options />} */}
+                  {dropdownVisible === index && (
+                    <Options
+                      dropdownVisible={dropdownVisible}
+                      setDropdownVisible={setDropdownVisible}
+                    />
+                  )}
                 </tr>
               );
             })}

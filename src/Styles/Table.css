@@ -5,6 +5,7 @@
   margin-top: 50px;
   padding: 20px;
   border-radius: 10px;
+  position: relative;
 }
 
 .table table tr td {
@@ -33,7 +34,7 @@
 }
 
 .table .pending {
-  color: yellow;
+  color: orange;
 }
 
 .table .inactive {

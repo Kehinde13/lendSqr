@@ -1,0 +1,20 @@
+.filter {
+    height: fit-content;
+    position: absolute;
+    left: 10px;
+    top: 80px;
+    box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
+    background-color: white;
+    padding:20px 10px;
+
+    form > div {
+       display: flex;
+       flex-direction: column;
+       padding: 10px 5px;
+       
+       .buttons {
+        display: flex;
+        justify-content: space-between;
+       }
+    }
+}
