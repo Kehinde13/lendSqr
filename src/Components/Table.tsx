@@ -55,6 +55,7 @@ const Table = () => {
     setCurrentPageNumber(newPage);
   };
 
+
   useEffect(() => {
     const start = (currentPageNumber - 1) * TOTAL_VALUES_PER_PAGE;
     const end = currentPageNumber * TOTAL_VALUES_PER_PAGE;
@@ -107,6 +108,7 @@ const Table = () => {
                     <Options
                       dropdownVisible={dropdownVisible}
                       setDropdownVisible={setDropdownVisible}
+                      userId={user.id}
                     />
                   )}
                 </tr>

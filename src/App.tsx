@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import LoginPage from "./Pages/LoginPage"
 import Dashboard from "./Pages/Dashboard"
 import Users from "./Pages/Users"
+import UserDetails from "./Pages/UserDetails"
 
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
         {
           element: <Users />,
           index: true
+        },
+        {
+          path: 'userdetails/:userId',
+          element: <UserDetails />
         }
       ]
     }

@@ -18,6 +18,11 @@
   cursor: pointer;
 }
 
+.options div a {
+  text-decoration: none;
+  color: #545F7D;
+}
+
 .options div img {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;

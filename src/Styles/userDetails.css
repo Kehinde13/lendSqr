@@ -1,0 +1,48 @@
+.userDetails {
+  background-color: rgba(248, 243, 243, 0.35);
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2 / 7;
+  padding: 30px 50px;
+}
+
+.userDetails a {
+  text-decoration: none;
+  color: #545F7D;
+}
+
+.userDetails .heading {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.userDetails .heading div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.userDetails .heading div button {
+  padding: 8px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.userDetails .heading div .blacklist {
+  border: 1px solid #E4033B;
+  color: #E4033B;
+}
+
+.userDetails .heading div .activate {
+  border: 1px solid #39cdcc;
+  color: #39cdcc;
+}
+/*# sourceMappingURL=userDetails.css.map */

@@ -1,0 +1,40 @@
+@import '../Variables/Variables.scss';
+
+.userDetails {
+    background-color: rgba(248, 243, 243, 0.35);
+    grid-column: 2 / 7;
+    padding: 30px 50px;
+
+    a {
+        text-decoration: none;
+        color: $grayColor;
+    }
+
+    .heading {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            gap: 20px; 
+            align-self: center;
+
+            button {
+                padding: 8px;
+                border-radius: 10px;
+                background-color: white;
+            }
+
+            .blacklist {
+                border: 1px solid #E4033B;
+                color: #E4033B;
+            }
+
+            .activate {
+                border: 1px solid $neonColor;
+                color: $neonColor;
+            }
+        }
+    }
+}

@@ -3,15 +3,16 @@
   height: -moz-fit-content;
   height: fit-content;
   position: absolute;
-  left: 10px;
-  top: 80px;
+  left: 280px;
+  top: 430px;
   -webkit-box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
           box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
   background-color: white;
   padding: 20px 10px;
+  font-size: small;
 }
 
-.filter form > div {
+.filter form div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,14 +21,40 @@
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 10px 5px;
+  gap: 5px;
 }
 
-.filter form > div .buttons {
+.filter form div input, .filter form div select {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #dcf3f3;
+}
+
+.filter form .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.filter form .buttons button {
+  width: 50%;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: none;
+}
+
+.filter form .buttons .filterBtn {
+  color: white;
+  background-color: #39cdcc;
+}
+
+.filter form .buttons .resetBtn {
+  border: 1px solid #545F7D;
 }
 /*# sourceMappingURL=Filter.css.map */
