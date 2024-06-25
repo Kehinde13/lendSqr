@@ -31,8 +31,8 @@
 }
 
 .userDetails .heading div button {
-  padding: 8px;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 8px;
   background-color: white;
 }
 
@@ -44,5 +44,71 @@
 .userDetails .heading div .activate {
   border: 1px solid #39cdcc;
   color: #39cdcc;
+}
+
+.userDetails .info {
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 20px;
+  -webkit-box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
+          box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
+  border-bottom-width: 1px;
+}
+
+.userDetails .info .basicInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+  padding: 20px 50px;
+}
+
+.userDetails .info .basicInfo .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+  border-right: 1px solid #c0cae6;
+  padding-right: 50px;
+}
+
+.userDetails .info .basicInfo .profile .profilePicture {
+  background-color: #c0cae6;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.userDetails .info .basicInfo .userTier {
+  border-right: 1px solid #c0cae6;
+  padding-right: 50px;
+}
+
+.userDetails .info .basicInfo .userTier .stars {
+  margin-left: 10px;
+}
+
+.userDetails .info ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+}
+
+.userDetails .info ul li {
+  list-style: none;
+  cursor: pointer;
+  width: 100%;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.userDetails .info ul li:hover {
+  border-bottom: 2px solid #39cdcc;
 }
 /*# sourceMappingURL=userDetails.css.map */
