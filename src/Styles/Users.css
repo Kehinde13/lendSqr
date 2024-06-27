@@ -6,6 +6,10 @@
   height: 100%;
 }
 
+.users h1 {
+  margin-left: 10px;
+}
+
 .users .users-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,8 +18,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 10px;
   gap: 20px;
+  width: 80%;
+  margin: auto;
 }
 
 .users .users-bar div {
@@ -52,6 +57,7 @@
             flex-direction: row;
     margin-top: 10px;
     gap: 20px;
+    width: 100%;
   }
   .users .users-bar div {
     margin: 0 10px;

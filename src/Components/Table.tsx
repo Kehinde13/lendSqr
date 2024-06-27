@@ -26,6 +26,11 @@ const Table = () => {
     "STATUS",
   ];
 
+  const mobileHeaders = [
+    "USERNAME",
+    "STATUS",
+  ];
+
   const toggleDropdown = (index: number) => {
     if (dropdownVisible === index) {
       setDropdownVisible(null);
@@ -35,8 +40,8 @@ const Table = () => {
   };
 
   const toggleFilter = () => {
-    setShowFilter(!showFilter)
-  }
+    setShowFilter(!showFilter);
+  };
 
   const goOnPrevPage = () => {
     if (currentPageNumber === 1) return;
@@ -55,7 +60,6 @@ const Table = () => {
     setCurrentPageNumber(newPage);
   };
 
-
   useEffect(() => {
     const start = (currentPageNumber - 1) * TOTAL_VALUES_PER_PAGE;
     const end = currentPageNumber * TOTAL_VALUES_PER_PAGE;
@@ -65,57 +69,107 @@ const Table = () => {
   return (
     <div className="table">
       {dataToDisplay ? (
-        <table>
-          <thead>
-            <tr>
-              {tableHeaders.map((header) => {
+        <>
+          <table className="desktopTable">
+            <thead>
+              <tr>
+                {tableHeaders.map((header) => {
+                  return (
+                    <th key={header} className="headers">
+                      {header}
+                      <img src={filter} alt="" onClick={toggleFilter} />
+                    </th>
+                  );
+                })}
+                {showFilter && <Filter />}
+              </tr>
+            </thead>
+            <tbody>
+              {dataToDisplay.map((user, index) => {
                 return (
-                  <th key={header} className="headers">
-                    {header}
-                    <img src={filter} alt="" onClick={toggleFilter}/>
-                  </th>
+                  <tr key={user.id} className="tableContents">
+                    <td>{user.organization}</td>
+                    <td>{user.username}</td>
+                    <td>{user.email}</td>
+                    <td>{user.phone}</td>
+                    <td>{user.joined}</td>
+                    <td
+                      className={`${
+                        user.status === "Inactive"
+                          ? "inactive"
+                          : user.status === "Active"
+                          ? "active"
+                          : user.status === "Blacklisted"
+                          ? "blacklisted"
+                          : "pending"
+                      }`}
+                    >
+                      {user.status}
+                    </td>
+                    <td onClick={() => toggleDropdown(index)}>
+                      <img src={options} alt="options" />
+                    </td>
+                    {dropdownVisible === index && (
+                      <Options
+                        dropdownVisible={dropdownVisible}
+                        setDropdownVisible={setDropdownVisible}
+                        userId={user.id}
+                      />
+                    )}
+                  </tr>
                 );
               })}
-              { showFilter && (<Filter />)}
-            </tr>
-          </thead>
-          <tbody>
-            {dataToDisplay.map((user, index) => {
-              return (
-                <tr key={user.id} className="tableContents">
-                  <td>{user.organization}</td>
-                  <td>{user.username}</td>
-                  <td>{user.email}</td>
-                  <td>{user.phone}</td>
-                  <td>{user.joined}</td>
-                  <td
-                    className={`${
-                      user.status === "Inactive"
-                        ? "inactive"
-                        : user.status === "Active"
-                        ? "active"
-                        : user.status === "Blacklisted"
-                        ? "blacklisted"
-                        : "pending"
-                    }`}
-                  >
-                    {user.status}
-                  </td>
-                  <td onClick={() => toggleDropdown(index)}>
-                    <img src={options} alt="options" />
-                  </td>
-                  {dropdownVisible === index && (
-                    <Options
-                      dropdownVisible={dropdownVisible}
-                      setDropdownVisible={setDropdownVisible}
-                      userId={user.id}
-                    />
-                  )}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+
+          <table className="mobileTable">
+            <thead>
+              <tr>
+                {mobileHeaders.map((header) => {
+                  return (
+                    <th key={header} className="headers">
+                      {header}
+                      <img src={filter} alt="" onClick={toggleFilter} />
+                    </th>
+                  );
+                })}
+                {showFilter && <Filter />}
+              </tr>
+            </thead>
+            <tbody>
+              {dataToDisplay.map((user, index) => {
+                return (
+                  <tr key={user.id} className="tableContents">
+                    <td>{user.username}</td>
+                    <td
+                      className={`${
+                        user.status === "Inactive"
+                          ? "inactive"
+                          : user.status === "Active"
+                          ? "active"
+                          : user.status === "Blacklisted"
+                          ? "blacklisted"
+                          : "pending"
+                      }`}
+                    >
+                      {user.status}
+                    </td>
+                    <td onClick={() => toggleDropdown(index)}>
+                      <img src={options} alt="options" />
+                    </td>
+                    {dropdownVisible === index && (
+                      <Options
+                        dropdownVisible={dropdownVisible}
+                        setDropdownVisible={setDropdownVisible}
+                        userId={user.id}
+                      />
+                    )}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </>
       ) : (
         <div>Loading...</div>
       )}

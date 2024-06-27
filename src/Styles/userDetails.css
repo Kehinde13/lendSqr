@@ -49,10 +49,10 @@
 .userDetails .info {
   margin-top: 30px;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   -webkit-box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
           box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
-  border-bottom-width: 1px;
+  border-bottom-width: 2px;
 }
 
 .userDetails .info .basicInfo {
@@ -110,5 +110,6 @@
 
 .userDetails .info ul li:hover {
   border-bottom: 2px solid #39cdcc;
+  color: #39cdcc;
 }
 /*# sourceMappingURL=userDetails.css.map */

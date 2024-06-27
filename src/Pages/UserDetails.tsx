@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import starFull from "../assets/np_star_1208084_000000 1.png";
 import starEmpty from "../assets/np_star_1171151_000000 1.png";
 import placeHolderImg from "../assets/np_user_948637_000000 1.png";
+import UserInfo from "../Components/UserInfo";
 
 const UserDetails = () => {
   const [userData]: [userDataType[]] = useOutletContext();
@@ -70,6 +71,8 @@ const UserDetails = () => {
           <li>App and System</li>
         </ul>
       </div>
+
+      <UserInfo userProfile={userProfile}/>
     </div>
   );
 };

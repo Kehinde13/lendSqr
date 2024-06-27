@@ -4,12 +4,17 @@
     background-color: rgba(248, 243, 243, 0.35);
     grid-column: 1 / 7;
     height: 100%;
+    
+    h1 {
+        margin-left: 10px;
+    }
 
     .users-bar{
         display: flex;
         flex-direction: column;
-        margin-top: 10px;
         gap: 20px;
+        width: 80%;
+        margin: auto;
 
         div {
             margin: 0 10px;
@@ -38,6 +43,7 @@
             flex-direction: row;
             margin-top: 10px;
             gap: 20px;
+            width: 100%;
     
             div {
                 margin: 0 10px;

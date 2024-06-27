@@ -3,8 +3,8 @@
 .filter {
     height: fit-content;
     position: absolute;
-    left: 280px;
-    top: 430px;
+    left: 50px;
+    top: 930px;
     box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
     background-color: white;
     padding: 20px 10px;
@@ -17,7 +17,8 @@
             padding: 10px 5px;
             gap: 5px;
 
-            input, select {
+            input,
+            select {
                 padding: 8px;
                 border-radius: 10px;
                 border: 1px solid $lightNeonColor;
@@ -42,8 +43,15 @@
             }
 
             .resetBtn {
-               border: 1px solid $grayColor; 
+                border: 1px solid $grayColor;
             }
         }
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .filter {
+        left: 280px;
+        top: 430px;
     }
 }

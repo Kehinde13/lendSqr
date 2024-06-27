@@ -1,8 +1,13 @@
 .main {
-  padding-top: 80px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
+}
+
+@media screen and (min-width: 850px) {
+  .main {
+    margin-top: 80px;
+  }
 }
 /*# sourceMappingURL=Dashboard.css.map */

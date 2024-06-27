@@ -1,7 +1,12 @@
 
 
 .main{
-    padding-top: 80px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+}
+
+@media screen and (min-width: 850px) {
+    .main {
+        margin-top: 80px;
+    }
 }

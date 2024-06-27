@@ -1,6 +1,6 @@
 .options {
   position: absolute;
-  width: 10%;
+  width: 40%;
   padding: 5px  8px;
   right: 90px;
   background-color: white;
@@ -27,5 +27,11 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+@media screen and (min-width: 850px) {
+  .options {
+    width: 10%;
+  }
 }
 /*# sourceMappingURL=Options.css.map */

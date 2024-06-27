@@ -3,8 +3,8 @@
   height: -moz-fit-content;
   height: fit-content;
   position: absolute;
-  left: 280px;
-  top: 430px;
+  left: 50px;
+  top: 930px;
   -webkit-box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
           box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
   background-color: white;
@@ -24,7 +24,8 @@
   gap: 5px;
 }
 
-.filter form div input, .filter form div select {
+.filter form div input,
+.filter form div select {
   padding: 8px;
   border-radius: 10px;
   border: 1px solid #dcf3f3;
@@ -56,5 +57,12 @@
 
 .filter form .buttons .resetBtn {
   border: 1px solid #545F7D;
+}
+
+@media screen and (min-width: 850px) {
+  .filter {
+    left: 280px;
+    top: 430px;
+  }
 }
 /*# sourceMappingURL=Filter.css.map */
