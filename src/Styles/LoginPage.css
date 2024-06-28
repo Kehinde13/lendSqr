@@ -59,8 +59,8 @@
   .loginPage {
     padding: 50px;
   }
-  .loginPage .main {
-    margin-top: 50px;
+  .loginPage .login {
+    margin-top: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -68,18 +68,19 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .loginPage .main img {
+  .loginPage .login img {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
+    display: inline;
   }
-  .loginPage .main div {
+  .loginPage .login div {
     width: 40%;
   }
-  .loginPage .main h1, .loginPage .main p {
+  .loginPage .login h1, .loginPage .login p {
     text-align: left;
   }
-  .loginPage .main form {
+  .loginPage .login form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -90,18 +91,18 @@
     gap: 30px;
     margin-top: 30px;
   }
-  .loginPage .main form input {
+  .loginPage .login form input {
     padding: 12px;
     border-radius: 10px;
     border: 1px solid #545F7D;
     width: 70%;
   }
-  .loginPage .main form a {
+  .loginPage .login form a {
     text-decoration: none;
     font-size: small;
     color: #39cdcc;
   }
-  .loginPage .main form .btn {
+  .loginPage .login form .btn {
     padding: 12px;
     border-radius: 10px;
     background-color: #39cdcc;
