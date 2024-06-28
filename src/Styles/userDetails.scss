@@ -2,8 +2,8 @@
 
 .userDetails {
     background-color: rgba(248, 243, 243, 0.35);
-    grid-column: 2 / 7;
-    padding: 30px 50px;
+    grid-column: 1 / 7;
+    padding: 30px;
 
     a {
         text-decoration: none;
@@ -12,16 +12,14 @@
 
     .heading {
         margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
 
         div {
             display: flex;
-            gap: 20px; 
+            gap: 20px;
             align-self: center;
 
             button {
-                padding: 10px;
+                padding: 5px;
                 border-radius: 8px;
                 background-color: white;
             }
@@ -44,54 +42,101 @@
         border-radius: 10px;
         box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
         border-bottom-width: 2px;
- 
+
+
         .basicInfo {
-            display: flex;
-            align-items: center;
-            gap: 50px;
             padding: 20px 50px;
-            
-    
+
             .profile {
-                display: flex; 
-                gap: 30px;
-                border-right: 1px solid $lightGrayColor;
-                padding-right: 50px;
-                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 10px;
+                border-bottom: 1px solid $lightGrayColor;
+                padding-bottom: 10px;
+
                 .profilePicture {
                     background-color: $lightGrayColor;
                     padding: 20px;
                     border-radius: 50%;
                 }
             }
-    
+
             .userTier {
-                border-right: 1px solid $lightGrayColor;
-                padding-right: 50px;
-    
-                .stars {
-                    margin-left: 10px;
-                }
-            }
-        }
-
-        ul {
-            display: flex;
-            justify-content: space-between;
-            width: 90%;
-
-            li {
-                list-style: none;
-                cursor: pointer;
-                width: 100%;
+                border-bottom: 1px solid $lightGrayColor;
                 padding-bottom: 10px;
                 text-align: center;
             }
 
-            li:hover {
-                border-bottom: 2px solid $neonColor;
-                color: $neonColor;
+            .bank {
+                text-align: center;
             }
         }
-    }   
+
+        ul {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .userDetails {
+        grid-column: 2 / 7;
+        padding: 30px 50px;
+
+        .heading {
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                button {
+                    padding: 10px;
+                }
+            }
+        }
+
+        .info {
+
+            .basicInfo {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+
+                .profile {
+                    border-right: 1px solid $lightGrayColor;
+                    padding-right: 50px;
+                    border-bottom: none;
+                    flex-direction: row;
+                    text-align: left;
+                }
+
+                .userTier {
+                    border-right: 1px solid $lightGrayColor;
+                    padding-right: 50px;
+                    border-bottom: none;
+                }
+
+            }
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+
+                li {
+                    list-style: none;
+                    cursor: pointer;
+                    width: 100%;
+                    padding-bottom: 10px;
+                    text-align: center;
+                }
+
+                li:hover {
+                    border-bottom: 2px solid $neonColor;
+                    color: $neonColor;
+                }
+            }
+        }
+    }
 }

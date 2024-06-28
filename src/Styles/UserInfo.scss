@@ -6,40 +6,13 @@
     border-radius: 10px;
     box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
     padding: 20px;
-
-    .personal {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 20px;
-    }
-
-    .education {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 20px;
-    }
-
-    .socials {
-        display: flex;
-        gap: 80px;
-    }
-
-    .guarantor {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 20px;
-    }
-
+    font-size: small;
 }
 
 @media screen and (min-width: 850px) {
     .userInfo {
-        margin-top: 30px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
-        padding: 20px;
-    
+        font-size: medium;
+
         .personal {
             display: grid;
             grid-template-columns: repeat(5, 1fr);

@@ -11,23 +11,28 @@ type Prop = {
   userId: string
 }
 
-const Options = ({dropdownVisible, setDropdownVisible, userId}: Prop) => {
+const Options: React.FC<Prop> = ({ dropdownVisible, setDropdownVisible, userId }) => {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const clickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (dropdownVisible && dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setDropdownVisible(null);
       }
     };
-    document.addEventListener("mousedown", clickOutside);
-    return () => document.removeEventListener("mousedown", clickOutside);
-  }, [dropdownRef, setDropdownVisible, dropdownVisible]);
+
+    document.addEventListener('mousedown', clickOutside);
+    return () => {
+      document.removeEventListener('mousedown', clickOutside);
+    };
+  }, [dropdownVisible, setDropdownVisible]);
+
+
 
   return (
-    <div className='options' ref={dropdownRef} >
+    <div className='options' ref={dropdownRef}>
         <div>
-          <Link to={`userdetails/${userId}`}>
+          <Link to={`userdetails/${userId}`} className='viewDetails'>
             <img src={view} alt="" />
             View Details
           </Link>

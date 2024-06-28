@@ -1,9 +1,9 @@
 .userDetails {
   background-color: rgba(248, 243, 243, 0.35);
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 5;
-  grid-column: 2 / 7;
-  padding: 30px 50px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / 7;
+  padding: 30px;
 }
 
 .userDetails a {
@@ -13,12 +13,6 @@
 
 .userDetails .heading {
   margin-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .userDetails .heading div {
@@ -31,7 +25,7 @@
 }
 
 .userDetails .heading div button {
-  padding: 10px;
+  padding: 5px;
   border-radius: 8px;
   background-color: white;
 }
@@ -56,13 +50,6 @@
 }
 
 .userDetails .info .basicInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 50px;
   padding: 20px 50px;
 }
 
@@ -70,9 +57,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 30px;
-  border-right: 1px solid #c0cae6;
-  padding-right: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 10px;
+  border-bottom: 1px solid #c0cae6;
+  padding-bottom: 10px;
 }
 
 .userDetails .info .basicInfo .profile .profilePicture {
@@ -82,34 +77,80 @@
 }
 
 .userDetails .info .basicInfo .userTier {
-  border-right: 1px solid #c0cae6;
-  padding-right: 50px;
-}
-
-.userDetails .info .basicInfo .userTier .stars {
-  margin-left: 10px;
-}
-
-.userDetails .info ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 90%;
-}
-
-.userDetails .info ul li {
-  list-style: none;
-  cursor: pointer;
-  width: 100%;
+  border-bottom: 1px solid #c0cae6;
   padding-bottom: 10px;
   text-align: center;
 }
 
-.userDetails .info ul li:hover {
-  border-bottom: 2px solid #39cdcc;
-  color: #39cdcc;
+.userDetails .info .basicInfo .bank {
+  text-align: center;
+}
+
+.userDetails .info ul {
+  display: none;
+}
+
+@media screen and (min-width: 850px) {
+  .userDetails {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2 / 7;
+    padding: 30px 50px;
+  }
+  .userDetails .heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .userDetails .heading div button {
+    padding: 10px;
+  }
+  .userDetails .info .basicInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 50px;
+  }
+  .userDetails .info .basicInfo .profile {
+    border-right: 1px solid #c0cae6;
+    padding-right: 50px;
+    border-bottom: none;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    text-align: left;
+  }
+  .userDetails .info .basicInfo .userTier {
+    border-right: 1px solid #c0cae6;
+    padding-right: 50px;
+    border-bottom: none;
+  }
+  .userDetails .info ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 90%;
+  }
+  .userDetails .info ul li {
+    list-style: none;
+    cursor: pointer;
+    width: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  .userDetails .info ul li:hover {
+    border-bottom: 2px solid #39cdcc;
+    color: #39cdcc;
+  }
 }
 /*# sourceMappingURL=userDetails.css.map */

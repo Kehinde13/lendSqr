@@ -1,21 +1,28 @@
 .loginPage {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / 7;
   padding: 20px;
 }
 
-.loginPage .main {
+.loginPage .login {
   margin-top: 20px;
 }
 
-.loginPage .main img {
-  width: 100%;
+.loginPage .login img {
+  display: none;
 }
 
-.loginPage .main h1, .loginPage .main p {
+.loginPage .login div {
+  margin: 50px auto;
+}
+
+.loginPage .login h1, .loginPage .login p {
   text-align: center;
   color: #213f7d;
 }
 
-.loginPage .main form {
+.loginPage .login form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,19 +34,19 @@
   margin-top: 10px;
 }
 
-.loginPage .main form input {
+.loginPage .login form input {
   padding: 8px;
   border-radius: 10px;
   border: 1px solid #545F7D;
 }
 
-.loginPage .main form a {
+.loginPage .login form a {
   text-decoration: none;
   font-size: small;
   color: #39cdcc;
 }
 
-.loginPage .main form .btn {
+.loginPage .login form .btn {
   padding: 10px;
   border-radius: 10px;
   background-color: #39cdcc;

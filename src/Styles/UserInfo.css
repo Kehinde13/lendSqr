@@ -5,43 +5,42 @@
   -webkit-box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
           box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
   padding: 20px;
+  font-size: small;
 }
 
-.userInfo .personal {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
-}
-
-.userInfo .education {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
-}
-
-.userInfo .socials {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 80px;
-}
-
-.userInfo .guarantor {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
-}
-
-.userInfo hr {
-  background-color: red;
+@media screen and (min-width: 850px) {
+  .userInfo {
+    font-size: medium;
+  }
+  .userInfo .personal {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+  .userInfo .education {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+  .userInfo .socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 80px;
+  }
+  .userInfo .guarantor {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
 }
 /*# sourceMappingURL=UserInfo.css.map */

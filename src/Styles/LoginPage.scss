@@ -1,13 +1,18 @@
 @import '../Variables/Variables.scss';
 
 .loginPage {
+    grid-column: 1 / 7;
     padding: 20px;
 
-    .main {
+    .login {
         margin-top: 20px;
         
         img {
-            width: 100%;
+            display: none;
+        }
+
+        div {
+            margin:50px auto;
         }
 
         h1, p {

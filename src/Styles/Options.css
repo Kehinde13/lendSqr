@@ -9,7 +9,7 @@
           box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
 }
 
-.options div {
+.options div, .options .viewDetails {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,12 +18,12 @@
   cursor: pointer;
 }
 
-.options div a {
+.options div a, .options .viewDetails a {
   text-decoration: none;
   color: #545F7D;
 }
 
-.options div img {
+.options div img, .options .viewDetails img {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;

@@ -32,11 +32,7 @@ const Table = () => {
   ];
 
   const toggleDropdown = (index: number) => {
-    if (dropdownVisible === index) {
-      setDropdownVisible(null);
-    } else {
-      setDropdownVisible(index);
-    }
+    setDropdownVisible(dropdownVisible === index ? null : index); 
   };
 
   const toggleFilter = () => {
@@ -108,14 +104,15 @@ const Table = () => {
                     </td>
                     <td onClick={() => toggleDropdown(index)}>
                       <img src={options} alt="options" />
-                    </td>
-                    {dropdownVisible === index && (
+
+                      {dropdownVisible === index && (
                       <Options
                         dropdownVisible={dropdownVisible}
                         setDropdownVisible={setDropdownVisible}
                         userId={user.id}
                       />
                     )}
+                    </td>
                   </tr>
                 );
               })}
@@ -156,14 +153,15 @@ const Table = () => {
                     </td>
                     <td onClick={() => toggleDropdown(index)}>
                       <img src={options} alt="options" />
-                    </td>
-                    {dropdownVisible === index && (
+
+                      {dropdownVisible === index && (
                       <Options
                         dropdownVisible={dropdownVisible}
                         setDropdownVisible={setDropdownVisible}
                         userId={user.id}
                       />
                     )}
+                    </td>
                   </tr>
                 );
               })}

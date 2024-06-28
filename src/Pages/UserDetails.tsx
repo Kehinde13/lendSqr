@@ -57,7 +57,7 @@ const UserDetails = () => {
             </div>
           </div>
 
-          <div>
+          <div className="bank">
             <h3>{userProfile?.balance}</h3>
             <p>Providus Bank</p>
           </div>
