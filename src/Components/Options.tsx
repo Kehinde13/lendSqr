@@ -6,8 +6,8 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 type Prop = {
-  dropdownVisible: number | null
-  setDropdownVisible: (dropdownVisible: number | null) => void
+  dropdownVisible: string | boolean | number
+  setDropdownVisible: (dropdownVisible: string | boolean) => void
   userId: string
 }
 
@@ -17,7 +17,7 @@ const Options: React.FC<Prop> = ({ dropdownVisible, setDropdownVisible, userId }
   useEffect(() => {
     const clickOutside = (e: MouseEvent) => {
       if (dropdownVisible && dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownVisible(null);
+        setDropdownVisible(false);
       }
     };
 
@@ -28,9 +28,8 @@ const Options: React.FC<Prop> = ({ dropdownVisible, setDropdownVisible, userId }
   }, [dropdownVisible, setDropdownVisible]);
 
 
-
   return (
-    <div className='options' ref={dropdownRef}>
+    <div className='options' ref={dropdownRef} >
         <div>
           <Link to={`userdetails/${userId}`} className='viewDetails'>
             <img src={view} alt="" />

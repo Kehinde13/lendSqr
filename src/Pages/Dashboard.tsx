@@ -54,7 +54,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar userData={userData} setUserData={setUserData} />
       <div className="main">
         <Sidebar />
         <Outlet context={[userData]} />

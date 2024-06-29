@@ -8,9 +8,21 @@ import burger from '../assets/Menu.png'
 import '../Styles/Navbar.css'
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
+import { userDataType } from "../Pages/Dashboard";
 
-const Navbar = () => {
+type Prop = {
+   userData: userDataType[] | undefined
+   setUserData: (userData: userDataType[]) => void
+}
+
+const Navbar: React.FC<Prop> = (userData, setUserData) => {
   const [menu, setMenu] = useState(false)
+  const [searchUser, setSearchUser] = useState("")
+
+  const searchData = () => {
+    const searchedUserData: userDataType  = userData?.find((user: userDataType) => user.username === searchUser);
+    setUserData(searchedUserData)
+  }
 
  const toggleMenu = () => {
     setMenu(!menu)
@@ -20,8 +32,8 @@ const Navbar = () => {
       <img src={logo} alt="logo" />
 
       <form action="">
-        <input type="text" placeholder="Search for anything"/>
-        <button>
+        <input type="text" placeholder="Search for user" onChange={(e) => setSearchUser(e.target.value)}/>
+        <button onClick={searchData}>
             <img src={search} alt="" />
         </button>
       </form>

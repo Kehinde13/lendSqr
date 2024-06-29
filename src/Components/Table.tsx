@@ -13,7 +13,7 @@ const Table = () => {
   const [userData]: [userDataType[]] = useOutletContext();
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [dataToDisplay, setDataToDisplay] = useState<userDataType[]>();
-  const [dropdownVisible, setDropdownVisible] = useState<number | null>(null);
+  const [dropdownVisible, setDropdownVisible] = useState<string | boolean | number>(false);
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const TOTAL_VALUES_PER_PAGE = 10;
 
@@ -31,8 +31,8 @@ const Table = () => {
     "STATUS",
   ];
 
-  const toggleDropdown = (index: number) => {
-    setDropdownVisible(dropdownVisible === index ? null : index); 
+  const toggleDropdown = (id: string | number) => {
+    setDropdownVisible(dropdownVisible === id ? false : id);
   };
 
   const toggleFilter = () => {
@@ -77,11 +77,11 @@ const Table = () => {
                     </th>
                   );
                 })}
-                {showFilter && <Filter />}
+                {showFilter && <Filter  />}
               </tr>
             </thead>
             <tbody>
-              {dataToDisplay.map((user, index) => {
+              {dataToDisplay.map((user) => {
                 return (
                   <tr key={user.id} className="tableContents">
                     <td>{user.organization}</td>
@@ -102,10 +102,10 @@ const Table = () => {
                     >
                       {user.status}
                     </td>
-                    <td onClick={() => toggleDropdown(index)}>
+                    <td onClick={() => toggleDropdown(user.id)}>
                       <img src={options} alt="options" />
 
-                      {dropdownVisible === index && (
+                      {dropdownVisible === user.id && (
                       <Options
                         dropdownVisible={dropdownVisible}
                         setDropdownVisible={setDropdownVisible}
