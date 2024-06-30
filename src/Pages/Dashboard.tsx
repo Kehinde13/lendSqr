@@ -5,6 +5,7 @@ import "../Styles/Dashboard.css";
 import { useEffect, useState } from "react";
 
 export interface userDataType {
+  _id: string;
   id: string;
   index: number;
   guid: string;
@@ -54,7 +55,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <Navbar userData={userData} setUserData={setUserData} />
+      <Navbar userData={userData} />
       <div className="main">
         <Sidebar />
         <Outlet context={[userData]} />

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAA;EACP,QAAQ,EAAE,QAAQ;EAClB,UAAU,EAAE,yBAAyB,CAAC,GAAG,CAAC,GAAG,CAAC,GAAG;EACjD,gBAAgB,EAAE,KAAK;EACvB,KAAK,EAAE,GAAG;EACV,IAAI,EAAE,KAAK;EACX,GAAG,EAAE,IAAI;EACT,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,SAAS;CACrB",
+    "sources": [
+        "UserResult.scss"
+    ],
+    "names": [],
+    "file": "UserResult.css"
+}

@@ -1,0 +1,13 @@
+.userResult {
+  position: absolute;
+  -webkit-box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
+          box-shadow: rgba(161, 159, 159, 0.35) 0px 0px 8px;
+  background-color: white;
+  color: red;
+  left: 400px;
+  top: 70px;
+  width: 20%;
+  height: 50px;
+  padding: 10px 20px;
+}
+/*# sourceMappingURL=UserResult.css.map */
