@@ -47,7 +47,7 @@ const Navbar: React.FC<Prop> = ({ userData }) => {
       </form>
 
       {userResult && (
-        <UserResult userResult={userResult} setUserResult={setUserResult} />
+        <UserResult userResult={userResult} setUserResult={setUserResult} setMenu={setMenu} />
       )}
 
       <div>
@@ -66,7 +66,7 @@ const Navbar: React.FC<Prop> = ({ userData }) => {
         </div>
       </div>
 
-      <MobileMenu menu={menu} toggleMenu={toggleMenu} />
+      <MobileMenu menu={menu} toggleMenu={toggleMenu} userData={userData}  />
     </div>
   );
 };

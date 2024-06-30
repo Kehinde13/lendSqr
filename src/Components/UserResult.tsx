@@ -6,13 +6,15 @@ import { Link } from "react-router-dom";
 type Prop = {
   userResult: userDataType | undefined;
   setUserResult: (userResult: userDataType | undefined) => void
+  setMenu: (menu: boolean) => void;
 };
 
-const UserResult: React.FC<Prop> = ({ userResult, setUserResult }) => {
+const UserResult: React.FC<Prop> = ({ userResult, setUserResult, setMenu }) => {
  const resultRef = useRef<HTMLDivElement | null>(null)
 
   const closeModal = () => {
     setUserResult(undefined)
+    setMenu(false)
   }
 
   useEffect(() => {

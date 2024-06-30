@@ -1,24 +1,54 @@
+import { useState } from "react";
+import { userDataType } from "../Pages/Dashboard";
 import "../Styles/Filter.css";
 
-const Filter = () => {
+type Prop = {
+  userData: userDataType[];
+  setShowFilter: (filter: boolean) => void;
+  setDataToDisplay: (dataToDisplay: userDataType | undefined) => void;
+};
+
+const Filter: React.FC<Prop> = ({
+  userData,
+  setShowFilter,
+  setDataToDisplay,
+}) => {
+  const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [organization, setOrganization] = useState("");
+  const [status, setStatus] = useState("");
+  const Arr: (userDataType | undefined)[] = []
+
+  const filterData = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const result: userDataType | undefined = userData?.find(
+      (data) =>
+        data.username === username ||
+        data.email === email ||
+        data.status === status ||
+        data.organization === organization
+    );
+    Arr.push(result)
+    console.log(Arr);
+    
+    setShowFilter(false);
+  };
   return (
     <div className="filter">
-      <form action="">
+      <form onSubmit={filterData}>
         <div>
           <label htmlFor="organization">Organization</label>
-          <select name="organization" id="" aria-placeholder="Select">
-            <option value="0">Select</option>
-          </select>
+          <input name="organization" id="" placeholder="Org" onChange={(e) => setOrganization(e.target.value)} />  
         </div>
 
         <div>
           <label htmlFor="user">Username</label>
-          <input type="text" name="user" placeholder="User" />
+          <input type="text" name="user" placeholder="User" onChange={(e) => setUserName(e.target.value)}/>
         </div>
 
         <div>
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="" placeholder="Email" />
+          <input type="email" name="email" id="" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
         </div>
 
         <div>
@@ -33,9 +63,7 @@ const Filter = () => {
 
         <div>
           <label htmlFor="status">Status</label>
-          <select name="status" id="" aria-placeholder="Select">
-            <option value="0">Select</option>
-          </select>
+          <input name="status" id="" placeholder="Status" onChange={(e) => setStatus(e.target.value)} />
         </div>
 
         <div className="buttons">

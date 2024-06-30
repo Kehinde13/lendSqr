@@ -6,7 +6,7 @@ import search from "../assets/Search.png";
 import briefcase from "../assets/briefcase 1.png";
 import down from "../assets/Vector (3).png";
 import home from "../assets/home 1.png";
-import user from "../assets/user-friends 1.png";
+import userIcon from "../assets/user-friends 1.png";
 import users from "../assets/users 1.png";
 import sack from "../assets/sack 1.png";
 import handShake from "../assets/handshake-regular 1.png";
@@ -24,13 +24,28 @@ import report from "../assets/sliders-h 1.png";
 import sliders from "../assets/sliders-h 1.png";
 import badge from "../assets/badge-percent 1.png";
 import clipboard from "../assets/clipboard-list 1 (1).png";
+import UserResult from "./UserResult";
+import { userDataType } from "../Pages/Dashboard";
+import { useState } from "react";
 
 type Prop = {
   menu: boolean;
   toggleMenu: () => void;
+  userData: userDataType[] | undefined;
 };
 
-const MobileMenu = ({ menu, toggleMenu }: Prop) => {
+const MobileMenu = ({ menu, toggleMenu, userData }: Prop) => {
+  const [user, setUser] = useState("");
+  const [userResult, setUserResult] = useState<userDataType | undefined>();
+
+  const searchData = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const result: userDataType | undefined = userData?.find(
+      (data) => data.username === user
+    );
+    setUserResult(result);
+  };
+
   return (
     <div className={`${menu ? "mobileMenu" : "hideMenu"}`}>
       <img src={close} alt="" className="close" onClick={toggleMenu} />
@@ -41,12 +56,20 @@ const MobileMenu = ({ menu, toggleMenu }: Prop) => {
           <img src={dropdown} alt="dropdown" className="dropdown" />
         </div>
 
-        <form action="">
-          <input type="text" placeholder="Search for anything" />
+        <form onSubmit={searchData}>
+          <input
+            type="text"
+            placeholder="Search for users"
+            onChange={(e) => setUser(e.target.value)}
+          />
           <button>
             <img src={search} alt="" />
           </button>
         </form>
+
+        {userResult && (
+          <UserResult userResult={userResult} setUserResult={setUserResult} setMenu={toggleMenu} />
+        )}
 
         <div className="actions">
           <div>
@@ -63,7 +86,7 @@ const MobileMenu = ({ menu, toggleMenu }: Prop) => {
           <ul>
             <h4>CUSTOMERS</h4>
             <li>
-              <img src={user} alt="" />
+              <img src={userIcon} alt="" />
               Users
             </li>
             <li>

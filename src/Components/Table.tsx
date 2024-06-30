@@ -13,7 +13,9 @@ const Table = () => {
   const [userData]: [userDataType[]] = useOutletContext();
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [dataToDisplay, setDataToDisplay] = useState<userDataType[]>();
-  const [dropdownVisible, setDropdownVisible] = useState<string | boolean | number>(false);
+  const [dropdownVisible, setDropdownVisible] = useState<
+    string | boolean | number
+  >(false);
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const TOTAL_VALUES_PER_PAGE = 10;
 
@@ -26,10 +28,7 @@ const Table = () => {
     "STATUS",
   ];
 
-  const mobileHeaders = [
-    "USERNAME",
-    "STATUS",
-  ];
+  const mobileHeaders = ["USERNAME", "STATUS"];
 
   const toggleDropdown = (id: string | number) => {
     setDropdownVisible(dropdownVisible === id ? false : id);
@@ -77,7 +76,13 @@ const Table = () => {
                     </th>
                   );
                 })}
-                {showFilter && <Filter  />}
+                {showFilter && (
+                  <Filter
+                    userData={userData}
+                    setShowFilter={setShowFilter}
+                    setDataToDisplay={setDataToDisplay}
+                  />
+                )}
               </tr>
             </thead>
             <tbody>
@@ -106,12 +111,12 @@ const Table = () => {
                       <img src={options} alt="options" />
 
                       {dropdownVisible === user.id && (
-                      <Options
-                        dropdownVisible={dropdownVisible}
-                        setDropdownVisible={setDropdownVisible}
-                        userId={user.id}
-                      />
-                    )}
+                        <Options
+                          dropdownVisible={dropdownVisible}
+                          setDropdownVisible={setDropdownVisible}
+                          userId={user.id}
+                        />
+                      )}
                     </td>
                   </tr>
                 );
@@ -130,7 +135,13 @@ const Table = () => {
                     </th>
                   );
                 })}
-                {showFilter && <Filter />}
+                {showFilter && (
+                  <Filter
+                    userData={userData}
+                    setShowFilter={setShowFilter}
+                    setDataToDisplay={setDataToDisplay}
+                  />
+                )}
               </tr>
             </thead>
             <tbody>
@@ -155,12 +166,12 @@ const Table = () => {
                       <img src={options} alt="options" />
 
                       {dropdownVisible === index && (
-                      <Options
-                        dropdownVisible={dropdownVisible}
-                        setDropdownVisible={setDropdownVisible}
-                        userId={user.id}
-                      />
-                    )}
+                        <Options
+                          dropdownVisible={dropdownVisible}
+                          setDropdownVisible={setDropdownVisible}
+                          userId={user.id}
+                        />
+                      )}
                     </td>
                   </tr>
                 );
