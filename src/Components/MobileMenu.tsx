@@ -43,6 +43,9 @@ const MobileMenu = ({ menu, toggleMenu, userData }: Prop) => {
     const result: userDataType | undefined = userData?.find(
       (data) => data.username === user
     );
+    if(result === undefined){
+      alert("User Not Found")
+    }
     setUserResult(result);
   };
 

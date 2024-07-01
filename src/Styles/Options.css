@@ -14,7 +14,8 @@
   display: -ms-flexbox;
   display: flex;
   gap: 5px;
-  margin: 8px 0;
+  margin: 4px auto;
+  margin-left: 10px;
   cursor: pointer;
 }
 
@@ -32,6 +33,7 @@
 @media screen and (min-width: 850px) {
   .options {
     width: 10%;
+    margin-left: 0px;
   }
 }
 /*# sourceMappingURL=Options.css.map */

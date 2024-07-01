@@ -12,10 +12,8 @@ import Filter from "./Filter";
 const Table = () => {
   const [userData]: [userDataType[]] = useOutletContext();
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
-  const [dataToDisplay, setDataToDisplay] = useState<userDataType[]>();
-  const [dropdownVisible, setDropdownVisible] = useState<
-    string | boolean | number
-  >(false);
+  const [dataToDisplay, setDataToDisplay] = useState<(userDataType | undefined)[]>();
+  const [dropdownVisible, setDropdownVisible] = useState<string | boolean | number | undefined>(false);
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const TOTAL_VALUES_PER_PAGE = 10;
 
@@ -30,7 +28,7 @@ const Table = () => {
 
   const mobileHeaders = ["USERNAME", "STATUS"];
 
-  const toggleDropdown = (id: string | number) => {
+  const toggleDropdown = (id: string | number | undefined) => {
     setDropdownVisible(dropdownVisible === id ? false : id);
   };
 
@@ -88,33 +86,33 @@ const Table = () => {
             <tbody>
               {dataToDisplay.map((user) => {
                 return (
-                  <tr key={user.id} className="tableContents">
-                    <td>{user.organization}</td>
-                    <td>{user.username}</td>
-                    <td>{user.email}</td>
-                    <td>{user.phone}</td>
-                    <td>{user.joined}</td>
+                  <tr key={user?.id} className="tableContents">
+                    <td>{user?.organization}</td>
+                    <td>{user?.username}</td>
+                    <td>{user?.email}</td>
+                    <td>{user?.phone}</td>
+                    <td>{user?.joined}</td>
                     <td
                       className={`${
-                        user.status === "Inactive"
+                        user?.status === "Inactive"
                           ? "inactive"
-                          : user.status === "Active"
+                          : user?.status === "Active"
                           ? "active"
-                          : user.status === "Blacklisted"
+                          : user?.status === "Blacklisted"
                           ? "blacklisted"
                           : "pending"
                       }`}
                     >
-                      {user.status}
+                      {user?.status}
                     </td>
-                    <td onClick={() => toggleDropdown(user.id)}>
+                    <td onClick={() => toggleDropdown(user?.id)}>
                       <img src={options} alt="options" />
 
-                      {dropdownVisible === user.id && (
+                      {dropdownVisible === user?.id && (
                         <Options
                           dropdownVisible={dropdownVisible}
                           setDropdownVisible={setDropdownVisible}
-                          userId={user.id}
+                          userId={user?.id}
                         />
                       )}
                     </td>
@@ -147,20 +145,20 @@ const Table = () => {
             <tbody>
               {dataToDisplay.map((user, index) => {
                 return (
-                  <tr key={user.id} className="tableContents">
-                    <td>{user.username}</td>
+                  <tr key={user?.id} className="tableContents">
+                    <td>{user?.username}</td>
                     <td
                       className={`${
-                        user.status === "Inactive"
+                        user?.status === "Inactive"
                           ? "inactive"
-                          : user.status === "Active"
+                          : user?.status === "Active"
                           ? "active"
-                          : user.status === "Blacklisted"
+                          : user?.status === "Blacklisted"
                           ? "blacklisted"
                           : "pending"
                       }`}
                     >
-                      {user.status}
+                      {user?.status}
                     </td>
                     <td onClick={() => toggleDropdown(index)}>
                       <img src={options} alt="options" />
@@ -169,7 +167,7 @@ const Table = () => {
                         <Options
                           dropdownVisible={dropdownVisible}
                           setDropdownVisible={setDropdownVisible}
-                          userId={user.id}
+                          userId={user?.id}
                         />
                       )}
                     </td>
@@ -199,7 +197,7 @@ const Table = () => {
             </select>
             out of {userData.length / TOTAL_VALUES_PER_PAGE}
           </div>
-          <div id="btn-container">
+          <div className="btn-container">
             <button onClick={goOnPrevPage}>
               <img src={next} alt="" />
             </button>

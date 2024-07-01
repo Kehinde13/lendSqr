@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/Group (1).svg";
 import search from "../assets/Search.png";
-import alert from "../assets/alert.png";
+import alertIcon from "../assets/alert.png";
 import userPic from "../assets/avatar.png";
 import dropdown from "../assets/Vector (2).png";
 import burger from "../assets/Menu.png";
@@ -25,6 +25,9 @@ const Navbar: React.FC<Prop> = ({ userData }) => {
     const result: userDataType | undefined = userData?.find(
       (data) => data.username === user
     );
+    if(result === undefined){
+      alert("User Not Found")
+    }
     setUserResult(result);
   };
 
@@ -55,7 +58,7 @@ const Navbar: React.FC<Prop> = ({ userData }) => {
           Docs
         </Link>
 
-        <img src={alert} alt="alert" className="alert" />
+        <img src={alertIcon} alt="alert" className="alert" />
 
         <img src={burger} alt="" className="burger" onClick={toggleMenu} />
 

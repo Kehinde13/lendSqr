@@ -61,6 +61,7 @@
   .dropdown {
     display: flex;
     gap: 10px;
+    margin: 2px auto;
 
     select {
       background: rgb(250, 243, 243);
@@ -68,6 +69,10 @@
       border: none;
       width: 60px;
     }
+  }
+
+  .btn-container {
+    margin: 2px auto;
   }
 }
 
@@ -109,6 +114,10 @@
       select {
         padding: 5px 15px;
       }
+    }
+
+    .btn-container, .dropdown{
+      margin: 0;
     }
   }
 }

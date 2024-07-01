@@ -5,7 +5,7 @@ import "../Styles/Filter.css";
 type Prop = {
   userData: userDataType[];
   setShowFilter: (filter: boolean) => void;
-  setDataToDisplay: (dataToDisplay: userDataType | undefined) => void;
+  setDataToDisplay: (dataToDisplay: (userDataType | undefined)[]) => void;
 };
 
 const Filter: React.FC<Prop> = ({
@@ -17,7 +17,7 @@ const Filter: React.FC<Prop> = ({
   const [email, setEmail] = useState("");
   const [organization, setOrganization] = useState("");
   const [status, setStatus] = useState("");
-  const Arr: (userDataType | undefined)[] = []
+  const Arr: (userDataType | undefined)[] = [];
 
   const filterData = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,32 +28,54 @@ const Filter: React.FC<Prop> = ({
         data.status === status ||
         data.organization === organization
     );
-    Arr.push(result)
-    console.log(Arr);
-    
-    setShowFilter(false);
+    if (result === undefined ){
+      alert("No user found")
+      setShowFilter(false);
+      return
+    }
+    Arr.push(result);
+    setDataToDisplay(Arr);
   };
+
+
   return (
     <div className="filter">
       <form onSubmit={filterData}>
         <div>
           <label htmlFor="organization">Organization</label>
-          <input name="organization" id="" placeholder="Org" onChange={(e) => setOrganization(e.target.value)} />  
+          <input
+            name="organization"
+            id=""
+            placeholder="Org"
+            onChange={(e) => setOrganization(e.target.value)}
+            value={organization}
+          />
         </div>
 
         <div>
           <label htmlFor="user">Username</label>
-          <input type="text" name="user" placeholder="User" onChange={(e) => setUserName(e.target.value)}/>
+          <input
+            type="text"
+            name="user"
+            placeholder="User"
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
 
         <div>
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
 
         <div>
           <label htmlFor="date">Date</label>
-          <input type="date" name="date" id="" placeholder="Date" />
+          <input type="date" name="date" id="password" placeholder="Date" />
         </div>
 
         <div>
@@ -63,7 +85,12 @@ const Filter: React.FC<Prop> = ({
 
         <div>
           <label htmlFor="status">Status</label>
-          <input name="status" id="" placeholder="Status" onChange={(e) => setStatus(e.target.value)} />
+          <input
+            name="status"
+            id=""
+            placeholder="Status"
+            onChange={(e) => setStatus(e.target.value)}
+          />
         </div>
 
         <div className="buttons">
