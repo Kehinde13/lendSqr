@@ -53,6 +53,11 @@ const Table = () => {
     setCurrentPageNumber(newPage);
   };
 
+  const setPage = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const value = parseInt((e.target as HTMLButtonElement).value);
+    setCurrentPageNumber(value)
+  }
+
   useEffect(() => {
     const start = (currentPageNumber - 1) * TOTAL_VALUES_PER_PAGE;
     const end = currentPageNumber * TOTAL_VALUES_PER_PAGE;
@@ -201,12 +206,12 @@ const Table = () => {
             <button onClick={goOnPrevPage}>
               <img src={next} alt="" />
             </button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
+            <button value={1} onClick={setPage}>1</button>
+            <button value={2} onClick={setPage}>2</button>
+            <button value={3} onClick={setPage}>3</button>
             ......
-            <button>15</button>
-            <button>16</button>
+            <button value={15} onClick={setPage}>15</button>
+            <button value={16} onClick={setPage}>16</button>
             <button onClick={goOnNextPage}>
               <img src={previous} alt="" />
             </button>
