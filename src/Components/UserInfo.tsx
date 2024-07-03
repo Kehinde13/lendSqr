@@ -14,7 +14,7 @@ const UserInfo = ({ userProfile }: Prop) => {
         <div className="personal">
           <div>
             <h6>FULL NAME</h6>
-            <p>{userProfile?.username}</p>
+            <p>{userProfile?.name}</p>
           </div>
 
           <div>
@@ -112,7 +112,7 @@ const UserInfo = ({ userProfile }: Prop) => {
 
           <div>
             <h6>FACEBOOK</h6>
-            <p>{userProfile?.username}</p>
+            <p>{userProfile?.name}</p>
           </div>
 
           <div>

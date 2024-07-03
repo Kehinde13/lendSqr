@@ -44,6 +44,15 @@
   color: #b9b9b9;
 }
 
+.table .loader {
+  width: 300px;
+  margin: 100px;
+}
+
+.table .loader img {
+  width: 50%;
+}
+
 .table .pagination {
   width: 90%;
   display: -webkit-box;
@@ -95,6 +104,10 @@
     padding: 15px 10px;
     margin: 10px;
   }
+  .table .loader {
+    width: 500px;
+    margin: 50px auto;
+  }
   .table .pagination {
     width: 100%;
     -webkit-box-orient: horizontal;
@@ -117,7 +130,8 @@
   .table .dropdown select {
     padding: 5px 15px;
   }
-  .table .btn-container, .table .dropdown {
+  .table .btn-container,
+  .table .dropdown {
     margin: 0;
   }
 }

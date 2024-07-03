@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export interface userDataType {
   _id: string;
-  id: string;
+  name: string;
   index: number;
   guid: string;
   isActive: boolean;
@@ -46,12 +46,12 @@ const Dashboard = () => {
   const [userData, setUserData] = useState<userDataType[]>();
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://run.mocky.io/v3/9957350a-51c0-4ad3-8e64-2f7baca02f64")
       .then((response) => response.json())
       .then((res) => {
         setUserData(res);
-      });
-  }, []);
+      });  
+  },);
 
   return (
     <div>

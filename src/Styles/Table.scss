@@ -46,6 +46,16 @@
     color: rgb(185, 185, 185);
   }
 
+  .loader {
+    width: 300px;
+    margin: 100px;
+
+    img {
+      width: 50%;
+    }
+  }
+
+
   .pagination {
     width: 90%;
     display: flex;
@@ -97,6 +107,11 @@
       margin: 10px;
     }
 
+    .loader {
+      width: 500px;
+      margin: 50px auto;
+    }
+
     .pagination {
       width: 100%;
       flex-direction: row;
@@ -116,7 +131,8 @@
       }
     }
 
-    .btn-container, .dropdown{
+    .btn-container,
+    .dropdown {
       margin: 0;
     }
   }

@@ -8,6 +8,7 @@ import filter from "../assets/filter-results-button (1).png";
 import "../Styles/Table.css";
 import Options from "./Options";
 import Filter from "./Filter";
+import loadingIcon from '../assets/Loading_icon.gif'
 
 const Table = () => {
   const [userData]: [userDataType[]] = useOutletContext();
@@ -89,9 +90,9 @@ const Table = () => {
               </tr>
             </thead>
             <tbody>
-              {dataToDisplay.map((user) => {
+              {dataToDisplay.map((user, index) => {
                 return (
-                  <tr key={user?.id} className="tableContents">
+                  <tr key={index} className="tableContents">
                     <td>{user?.organization}</td>
                     <td>{user?.username}</td>
                     <td>{user?.email}</td>
@@ -110,14 +111,14 @@ const Table = () => {
                     >
                       {user?.status}
                     </td>
-                    <td onClick={() => toggleDropdown(user?.id)}>
+                    <td onClick={() => toggleDropdown(user?._id)}>
                       <img src={options} alt="options" />
 
-                      {dropdownVisible === user?.id && (
+                      {dropdownVisible === user?._id && (
                         <Options
                           dropdownVisible={dropdownVisible}
                           setDropdownVisible={setDropdownVisible}
-                          userId={user?.id}
+                          userId={user?._id}
                         />
                       )}
                     </td>
@@ -150,7 +151,7 @@ const Table = () => {
             <tbody>
               {dataToDisplay.map((user, index) => {
                 return (
-                  <tr key={user?.id} className="tableContents">
+                  <tr key={index} className="tableContents">
                     <td>{user?.username}</td>
                     <td
                       className={`${
@@ -172,7 +173,7 @@ const Table = () => {
                         <Options
                           dropdownVisible={dropdownVisible}
                           setDropdownVisible={setDropdownVisible}
-                          userId={user?.id}
+                          userId={user?._id}
                         />
                       )}
                     </td>
@@ -183,7 +184,7 @@ const Table = () => {
           </table>
         </>
       ) : (
-        <div>Loading...</div>
+        <div className="loader"><img src={loadingIcon} alt="" /></div>
       )}
       {userData && (
         <div className="pagination">

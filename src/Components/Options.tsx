@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 type Prop = {
   dropdownVisible: string | boolean | number | undefined;
   setDropdownVisible: (dropdownVisible: string | boolean) => void;
-  userId: string | undefined;
+  userId: string | undefined ;
 };
 
 const Options: React.FC<Prop> = ({

@@ -15,7 +15,7 @@ const UserDetails = () => {
 
   useEffect(() => {
     const getUserData = userData?.find(
-      (user: userDataType) => user.id === userId
+      (user: userDataType) => user._id === userId
     );
     setUserProfile(getUserData);
   }, [userData, userId]);
@@ -44,7 +44,7 @@ const UserDetails = () => {
 
             <div>
               <h3>{userProfile?.username}</h3>
-              {userProfile?.id}
+              {userProfile?._id}
             </div>
           </div>
 
