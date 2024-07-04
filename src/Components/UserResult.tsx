@@ -32,7 +32,7 @@ const UserResult: React.FC<Prop> = ({ userResult, setUserResult, setMenu }) => {
 
   return (
     <div className="userResult" ref={resultRef}>
-      <Link to={`userdetails/${userResult?.id}`} onClick={closeModal}>
+      <Link to={`userdetails/${userResult?._id}`} onClick={closeModal}>
           <p>{userResult?.organization}</p>
           <p>{userResult?.username}</p>
         <p
