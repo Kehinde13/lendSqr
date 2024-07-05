@@ -54,7 +54,7 @@ const Navbar: React.FC<Prop> = ({ userData }) => {
       )}
 
       <div>
-        <Link to="dashboard" className="doc">
+        <Link to="/dashboard" className="doc">
           Docs
         </Link>
 
