@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import "../Styles/Dashboard.css";
-import { useEffect, useState } from "react";
+import FetchUsers from "../hooks/FetchUsers";
 
 export interface userDataType {
   _id: string;
@@ -43,15 +43,7 @@ export interface userDataType {
 }
 
 const Dashboard = () => {
-  const [userData, setUserData] = useState<userDataType[]>();
-
-  useEffect(() => {
-    fetch("https://run.mocky.io/v3/9957350a-51c0-4ad3-8e64-2f7baca02f64")
-      .then((response) => response.json())
-      .then((res) => {
-        setUserData(res);
-      });  
-  },);
+  const {userData} = FetchUsers()
 
   return (
     <div>

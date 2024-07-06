@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { userDataType } from "../Pages/Dashboard";
 import "../Styles/Filter.css";
+import FetchUsers from "../hooks/FetchUsers";
 
 type Prop = {
   userData: userDataType[];
@@ -19,7 +20,7 @@ const Filter: React.FC<Prop> = ({
   const [status, setStatus] = useState("");
   const Arr: (userDataType | undefined)[] = [];
 
-  const filterData = (e: React.FormEvent<HTMLFormElement>) => {
+  const filterData = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     const result: userDataType | undefined = userData?.find(
       (data) =>
@@ -28,19 +29,19 @@ const Filter: React.FC<Prop> = ({
         data.status === status ||
         data.organization === organization
     );
-    if (result === undefined ){
-      alert("No user found")
+    if (result === undefined) {
+      alert("No user found");
       setShowFilter(false);
-      return
+      return;
     }
     Arr.push(result);
     setDataToDisplay(Arr);
+    setShowFilter(false);
   };
-
 
   return (
     <div className="filter">
-      <form onSubmit={filterData}>
+      <form>
         <div>
           <label htmlFor="organization">Organization</label>
           <input
@@ -94,9 +95,13 @@ const Filter: React.FC<Prop> = ({
         </div>
 
         <div className="buttons">
-          <button className="resetBtn">Reset</button>
+          <button className="resetBtn" onClick={FetchUsers}>
+            Reset
+          </button>
 
-          <button className="filterBtn">Filter</button>
+          <button className="filterBtn" onClick={(e) => filterData(e)}>
+            Filter
+          </button>
         </div>
       </form>
     </div>
