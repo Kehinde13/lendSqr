@@ -2,7 +2,7 @@ import { userDataType } from "../Pages/Dashboard";
 import "../Styles/UserInfo.css";
 
 type Prop = {
-  userProfile?: userDataType;
+  userProfile?: userDataType | null;
 };
 
 const UserInfo = ({ userProfile }: Prop) => {

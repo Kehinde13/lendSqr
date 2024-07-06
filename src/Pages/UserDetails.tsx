@@ -10,14 +10,27 @@ import UserInfo from "../Components/UserInfo";
 
 const UserDetails = () => {
   const [userData]: [userDataType[]] = useOutletContext();
-  const [userProfile, setUserProfile] = useState<userDataType>();
+  const [userProfile, setUserProfile] = useState<userDataType | null>();
   const { userId } = useParams();
 
   useEffect(() => {
-    const getUserData = userData?.find(
-      (user: userDataType) => user._id === userId
-    );
-    setUserProfile(getUserData);
+    const storedUserProfileString = localStorage.getItem(`userProfile-${userId}`);
+    
+    if (storedUserProfileString) {
+      try {
+        const storedUserProfile: userDataType = JSON.parse(storedUserProfileString);
+        setUserProfile(storedUserProfile);
+      } catch (error) {
+        console.error("Error parsing stored user profile:", error);
+        setUserProfile(null); // Handle parsing error gracefully
+      }
+    } else {
+      const getUserData = userData?.find(
+        (user: userDataType) => user._id === userId
+      );
+        setUserProfile(getUserData);
+        localStorage.setItem(`userProfile-${userId}`, JSON.stringify(getUserData));
+    }
   }, [userData, userId]);
 
   return (
@@ -72,7 +85,7 @@ const UserDetails = () => {
         </ul>
       </div>
 
-      <UserInfo userProfile={userProfile}/>
+      <UserInfo userProfile={userProfile} />
     </div>
   );
 };
