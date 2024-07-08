@@ -22,7 +22,7 @@ const UserDetails = () => {
         setUserProfile(storedUserProfile);
       } catch (error) {
         console.error("Error parsing stored user profile:", error);
-        setUserProfile(null); // Handle parsing error gracefully
+        setUserProfile(null);
       }
     } else {
       const getUserData = userData?.find(
