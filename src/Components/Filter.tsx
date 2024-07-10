@@ -46,7 +46,7 @@ const Filter: React.FC<Prop> = ({
           <label htmlFor="organization">Organization</label>
           <input
             name="organization"
-            id=""
+            id="organization"
             placeholder="Org"
             onChange={(e) => setOrganization(e.target.value)}
             value={organization}
@@ -58,6 +58,7 @@ const Filter: React.FC<Prop> = ({
           <input
             type="text"
             name="user"
+            id="user"
             placeholder="User"
             onChange={(e) => setUserName(e.target.value)}
           />
@@ -76,19 +77,19 @@ const Filter: React.FC<Prop> = ({
 
         <div>
           <label htmlFor="date">Date</label>
-          <input type="date" name="date" id="password" placeholder="Date" />
+          <input type="date" name="date" id="date" placeholder="Date" />
         </div>
 
         <div>
           <label htmlFor="number">Phone Number</label>
-          <input type="text" name="number" id="" placeholder="Phone Number" />
+          <input type="text" name="number" id="number" placeholder="Phone Number" />
         </div>
 
         <div>
           <label htmlFor="status">Status</label>
           <input
             name="status"
-            id=""
+            id="status"
             placeholder="Status"
             onChange={(e) => setStatus(e.target.value)}
           />

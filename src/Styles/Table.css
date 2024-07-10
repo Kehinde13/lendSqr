@@ -44,15 +44,6 @@
   color: #b9b9b9;
 }
 
-.table .loader {
-  width: 300px;
-  margin: 100px;
-}
-
-.table .loader img {
-  width: 50%;
-}
-
 .table .pagination {
   width: 90%;
   display: -webkit-box;
@@ -103,10 +94,6 @@
   .table th {
     padding: 15px 10px;
     margin: 10px;
-  }
-  .table .loader {
-    width: 500px;
-    margin: 50px auto;
   }
   .table .pagination {
     width: 100%;

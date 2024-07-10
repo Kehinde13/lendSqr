@@ -8,7 +8,8 @@ import filter from "../assets/filter-results-button (1).png";
 import "../Styles/Table.css";
 import Options from "./Options";
 import Filter from "./Filter";
-import loadingIcon from '../assets/Loading_icon.gif'
+import Loader from "./Loader";
+
 
 const Table = () => {
   const [userData]: [userDataType[]] = useOutletContext();
@@ -76,7 +77,7 @@ const Table = () => {
                   return (
                     <th key={header} className="headers">
                       {header}
-                      <img src={filter} alt="" onClick={toggleFilter} />
+                      <img src={filter} alt="filter" onClick={toggleFilter} />
                     </th>
                   );
                 })}
@@ -135,7 +136,7 @@ const Table = () => {
                   return (
                     <th key={header} className="headers">
                       {header}
-                      <img src={filter} alt="" onClick={toggleFilter} />
+                      <img src={filter} alt="filter" onClick={toggleFilter} />
                     </th>
                   );
                 })}
@@ -184,7 +185,7 @@ const Table = () => {
           </table>
         </>
       ) : (
-        <div className="loader"><img src={loadingIcon} alt="" /></div>
+        <Loader />
       )}
       {userData && (
         <div className="pagination">
@@ -195,7 +196,7 @@ const Table = () => {
               onChange={handleSelectChange}
               value={currentPageNumber}
             >
-              {Array.from(Array(userData.length / TOTAL_VALUES_PER_PAGE))
+              {userData.length > 1  &&  Array.from(Array(userData.length / TOTAL_VALUES_PER_PAGE))
                 .map((_e, i) => i + 1)
                 .map((val) => {
                   return <option key={val}>{val}</option>;

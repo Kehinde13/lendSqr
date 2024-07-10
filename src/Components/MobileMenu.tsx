@@ -62,7 +62,7 @@ const MobileMenu = ({ menu, toggleMenu, userData }: Prop) => {
         <form onSubmit={searchData}>
           <input
             type="text"
-            placeholder="Search for users"
+            placeholder="Search users"
             onChange={(e) => setUser(e.target.value)}
           />
           <button>

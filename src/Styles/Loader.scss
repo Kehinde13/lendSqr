@@ -1,0 +1,16 @@
+
+.loader {
+    width: 300px;
+    margin: 100px;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 850px) {
+    .loader {
+        width: 500px;
+        margin: 50px auto;
+      }
+  }
