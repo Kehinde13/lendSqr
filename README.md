@@ -14,6 +14,7 @@ This project is a web application designed with four primary pages: Login, Dashb
 - [Usage](#usage)
 - [API Details](#api-details)
 - [Testing](#testing)
+- [Links](#links)
 
 ## Features
 
@@ -128,6 +129,11 @@ The tests cover various aspects of the application, including:
 - User interactions
 - API calls and data handling
 - Local storage operations
+
+# Links
+- [Repository](https://github.com/Kehinde13/lendSqr)
+- [live site](https://kehinde-balogun-lendsqr-fe-test.netlify.app)
+
 
 
 
