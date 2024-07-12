@@ -3,18 +3,16 @@
 .loginPage {
     grid-column: 1 / 7;
     padding: 20px;
-
-    .login {
-        margin-top: 20px;
+    
+    .images {
+       .signIn {
+        display: none;
+       }
+    }
         
-        img {
-            display: none;
-        }
-
-        div {
-            margin:50px auto;
-        }
-
+        
+    .form {
+        margin-top: 50px;
         h1, p {
             text-align: center;
             color: $primaryColor;
@@ -32,6 +30,14 @@
                 border: 1px solid #545F7D;
             }
 
+            .show {
+                position: absolute;
+                top: 45%;
+                left: 75%;
+                font-size: small;
+                color: $neonColor;
+            }
+
             a {
                 text-decoration: none;
                 font-size: small;
@@ -47,59 +53,79 @@
                 text-align: center;
             }
         }
-    }
 }
+    }   
+
+       
+
+       
 
 @media screen and (min-width: 850px) {
-    .loginPage {
-        padding: 50px;
     
-        .login {
-            margin-top: 30px;
+        .loginPage {
+            padding: 50px;
             display: flex;
             justify-content: space-between;
-            
-            img {
-                width: fit-content;
-                display: inline;
-            }
-
-            div {
-                width: 40%;
-            }
-    
-            h1, p {
-                text-align: left;
-            }
-    
-            form {
+        
+            .images {
                 display: flex;
                 flex-direction: column;
-                gap: 30px;
-                margin-top: 30px;
-    
-                input {
-                    padding: 12px;
-                    border-radius: 10px;
-                    border: 1px solid $grayColor;
-                    width: 70%;
+                gap: 60px;
+
+                .logo {
+                  width: 30%;
+                  align-self: flex-start;
                 }
-    
-                a {
-                    text-decoration: none;
-                    font-size: small;
-                    color: $neonColor;
-                }
-    
-                .btn {
-                    padding: 12px;
-                    border-radius: 10px;
-                    background-color: $neonColor;
-                    border: none;
-                    color: white;
-                    width: 70%;
+
+                .signIn {
+                    width: fit-content;
+                    display: inline;
                 }
             }
+    
+            .form {
+                width: 50%;
+                gap: 50px;
+
+                h1, p {
+                    text-align: left;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    margin-top: 30px;
+        
+                    input {
+                        padding: 12px;
+                        border-radius: 10px;
+                        border: 1px solid $grayColor;
+                        width: 70%;
+                    }
+
+                    .show {
+                        top: 47%;
+                        left: 80%;
+                    }
+        
+                    a {
+                        text-decoration: none;
+                        font-size: small;
+                        color: $neonColor;
+                    }
+        
+                    .btn {
+                        padding: 12px;
+                        border-radius: 10px;
+                        background-color: $neonColor;
+                        border: none;
+                        color: white;
+                        width: 70%;
+                    }
+                }
+            }
+    
+            
         }
-    }
 }

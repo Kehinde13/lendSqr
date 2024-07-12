@@ -40,7 +40,7 @@
             }
     
             li {
-                padding: 10px 30px;
+                padding: 10px 20px;
                 cursor: pointer;
                 display: flex;
                 gap: 10px;
@@ -49,9 +49,17 @@
     
             li:hover {
                 background-color: $lightNeonColor;
-                border-left: 4px solid $neonColor;
+                border-left: 3px solid $neonColor;
                 color: $deepGrayColor;
             }
+        }
+
+        .settings {
+            padding-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
         }
     }
 

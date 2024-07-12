@@ -3,25 +3,35 @@ import briefcase from "../assets/briefcase 1.png";
 import down from "../assets/Vector (3).png";
 import home from "../assets/home 1.png";
 import user from "../assets/user-friends 1.png";
-import users from '../assets/users 1.png'
-import sack from '../assets/sack 1.png'
-import handShake from '../assets/handshake-regular 1.png'
-import piggy from '../assets/piggy-bank 1.png'
-import loan from '../assets/Group 104.png'
-import userCheck from '../assets/user-check 1.png'
-import userTimes from '../assets/user-times 1.png'
-import bank from '../assets/np_bank_148501_000000 1.png'
-import savings from '../assets/coins-solid 1.png'
-import phone from '../assets/icon.png'
-import spinner from '../assets/galaxy 1.png'
-import userCog from '../assets/user-cog 1.png'
-import settlement from '../assets/scroll 1.png'
-import report from '../assets/sliders-h 1.png'
-import sliders from '../assets/sliders-h 1.png'
-import badge from '../assets/badge-percent 1.png'
-import clipboard from '../assets/clipboard-list 1 (1).png'
+import users from "../assets/users 1.png";
+import sack from "../assets/sack 1.png";
+import handShake from "../assets/handshake-regular 1.png";
+import piggy from "../assets/piggy-bank 1.png";
+import loan from "../assets/Group 104.png";
+import userCheck from "../assets/user-check 1.png";
+import userTimes from "../assets/user-times 1.png";
+import bank from "../assets/np_bank_148501_000000 1.png";
+import savings from "../assets/coins-solid 1.png";
+import phone from "../assets/icon.png";
+import spinner from "../assets/galaxy 1.png";
+import userCog from "../assets/user-cog 1.png";
+import settlement from "../assets/scroll 1.png";
+import report from "../assets/sliders-h 1.png";
+import sliders from "../assets/sliders-h 1.png";
+import badge from "../assets/badge-percent 1.png";
+import clipboard from "../assets/clipboard-list 1 (1).png";
+import settings from "../assets/tire 1.png";
+import signOut from "../assets/sign-out 1.png";
+import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const Sidebar = () => {
+  const { userId } = useParams();
+
+  useEffect(() => {
+    console.log(userId);
+  });
+
   return (
     <div className="sidebar">
       <div>
@@ -111,7 +121,7 @@ const Sidebar = () => {
         </li>
       </ul>
 
-      <ul>
+      <ul className="settings">
         <h4>SETTINGS</h4>
         <li>
           <img src={sliders} alt="" />
@@ -125,7 +135,26 @@ const Sidebar = () => {
           <img src={clipboard} alt="" />
           Audit logs
         </li>
+        <li>
+          <img src={settings} alt="" />
+          System Messages
+        </li>
       </ul>
+
+      {userId && (
+        <>
+          <hr />
+          <ul className="signOut">
+            <Link to='/'>
+              <li>
+                <img src={signOut} alt="" />
+                Sign Out
+              </li>
+            </Link>
+          </ul>
+          <div className="version">v1.2.0</div>{" "}
+        </>
+      )}
     </div>
   );
 };
